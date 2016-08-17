@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/mirchev1977VideoTutorials/tabs-shore/issues"
   },
-  "homepage": "https://github.com/mirchev1977VideoTutorials/tabs-shore#readme"
+  "homepage": "https://github.com/mirchev1977VideoTutorials/tabs-shore#readme",
+  "devDependencies": {
+    "jake": "^8.0.12"
+  }
 }
