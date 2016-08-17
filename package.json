@@ -1,0 +1,19 @@
+{
+  "name": "tabs-shore",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Jakefile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mirchev1977VideoTutorials/tabs-shore.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mirchev1977VideoTutorials/tabs-shore/issues"
+  },
+  "homepage": "https://github.com/mirchev1977VideoTutorials/tabs-shore#readme"
+}
