@@ -15,3 +15,4 @@ To run the build:
 1. Run `./jake.sh karma` (Mac/Unix) or `jake karma` (Windows) to start the Karma server 
 2. Navigate at least one browser to `http://localhost:9876`
 3. Run `./jake.sh` (Mac/Unix) or `jake` (Windows) each time you want to run the build
+4. If you want to skip testing some browsers, you can run: `./jake.sh loose=true` (Mac/Unix) or `jake loose=true` (Windows) each time you want to run the build
