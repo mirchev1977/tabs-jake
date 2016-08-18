@@ -37,7 +37,13 @@
 	task("lint", function() {
 		jshint.checkFiles({
 			files: ["Jakefile.js", "src/**/*.js"],
-			options: {
+			options: lintingOptions(),
+			globals: lintGlobals()
+		}, complete, fail);
+	}, { async: true });
+
+	function lintingOptions(){
+		return {
 				bitwise: true,
 				eqeqeq: true,
 				forin: true,
@@ -53,8 +59,11 @@
 
 				node: true,
 				browser: true
-			},
-			globals: {
+			};
+	}
+
+	function lintGlobals(){
+		return {
 				// Mocha
 				describe: false,
 				it: false,
@@ -62,8 +71,7 @@
 				after: false,
 				beforeEach: false,
 				afterEach: false
-			}
-		}, complete, fail);
-	}, { async: true });
+			};
+	}
 
 }());
