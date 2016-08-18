@@ -44,4 +44,9 @@
 			globals: {}
 		}, complete, fail);
 	}, { async: true });
+
+	desc("Run localhost http-server");
+	task("run", function(){
+		jake.exec("node node_modules/http-server/bin/http-server src", {interactive: true}, complete);
+	});
 }());
