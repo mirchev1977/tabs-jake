@@ -65,7 +65,8 @@
 		        "Opera 39.0.2256 (Windows 8.1 0.0.0)",
 		        "Safari 5.1.7 (Windows 8 0.0.0)",
 		        "IE 11.0.0 (Windows 8.1 0.0.0)"
-			]
+			],
+			strict: !process.env.loose
 		}, complete, fail);
 	}, { async: true });
 
