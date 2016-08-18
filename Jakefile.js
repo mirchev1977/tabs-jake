@@ -1,4 +1,4 @@
-/*globals desc:false, task:false, fail:false, complete:false*/
+/*globals desc:false, task:false, fail:false, complete:false, jake:false*/
 
 (function(){
 	"use strict";
@@ -23,7 +23,7 @@
 	desc("Lint JavaScript code");
 	task("lint", function() {
 		jshint.checkFiles({
-			files: "Jakefile.js",
+			files: ["Jakefile.js", "src/**/*.js"],
 			options: {
 				bitwise: true,
 				eqeqeq: true,
