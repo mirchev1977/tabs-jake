@@ -1,3 +1,5 @@
 node_modules/**/.bin/
 node_modules/.bin/jake
 node_modules/.bin/strip-ansi
+
+generated
