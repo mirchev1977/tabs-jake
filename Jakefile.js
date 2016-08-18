@@ -1,3 +1,5 @@
+/*globals desc:false, task:false, fail:false, complete:false*/
+
 (function(){
 	"use strict";
 	var jshint = require("simplebuild-jshint");
@@ -22,7 +24,23 @@
 	task("lint", function() {
 		jshint.checkFiles({
 			files: "Jakefile.js",
-			options: {},
+			options: {
+				bitwise: true,
+				eqeqeq: true,
+				forin: true,
+				freeze: true,
+				futurehostile: true,
+				latedef: "nofunc",
+				noarg: true,
+				nocomma: true,
+				nonbsp: true,
+				nonew: true,
+				strict: true,
+				undef: true,
+
+				node: true,
+				browser: true
+			},
 			globals: {}
 		}, complete, fail);
 	}, { async: true });
