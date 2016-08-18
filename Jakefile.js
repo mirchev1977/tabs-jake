@@ -4,10 +4,23 @@
 	"use strict";
 	var jshint = require("simplebuild-jshint");
 
+	/********************************************
+	GENERAL-PURPOSE TASKS
+	**********************************************/
+
 	desc("Default Build");
 	task("default", ["checkVersion", "lint"], function(){
 		console.log("\n\nBUILD OK");
 	});
+
+	desc("Run localhost http-server");
+	task("run", function(){
+		jake.exec("node node_modules/http-server/bin/http-server src", {interactive: true}, complete);
+	});
+
+	/********************************************
+	SUPPORTING TASKS
+	**********************************************/
 
 	desc("Checks if the correct Node version installed");
 	task("checkVersion", function(){
@@ -53,8 +66,4 @@
 		}, complete, fail);
 	}, { async: true });
 
-	desc("Run localhost http-server");
-	task("run", function(){
-		jake.exec("node node_modules/http-server/bin/http-server src", {interactive: true}, complete);
-	});
 }());
