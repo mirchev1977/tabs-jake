@@ -56,7 +56,7 @@
 	desc("Lint JavaScript code");
 	task("lint", function() {
 		jshint.checkFiles({
-			files: ["Jakefile.js", "src/**/*.js"],
+			files: ["Jakefile.js", "src/javascript/**/*.js"],
 			options: lintingOptions(),
 			globals: lintGlobals()
 		}, complete, fail);
