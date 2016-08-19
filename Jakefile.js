@@ -36,7 +36,7 @@
 	desc("Erase all generated files");
 	task("clean", function() {
 		shell.rm('-rf', 'generated');
-	});
+	}, {async: true});
 
 	/********************************************
 	SUPPORTING TASKS
@@ -81,7 +81,7 @@
 	task("build", [ DIST_DIR ], function() {
 		shell.rm('-rf', DIST_DIR + '/*');
 		shell.cp('src/index.html', DIST_DIR);
-	});
+	}, {async: true});
 
 	directory(DIST_DIR);
 
