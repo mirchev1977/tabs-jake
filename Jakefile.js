@@ -1,9 +1,10 @@
-/*globals desc:false, task:false, fail:false, complete:false, jake:false*/
+/*globals desc:false, task:false, fail:false, complete:false, jake:false, directory:false */
 
 (function(){
 	"use strict";
 	var jshint = require("simplebuild-jshint");
 	var karma = require("simplebuild-karma");
+	var shell = require("shelljs");
 
 	/********************************************
 	CONSTANTS
@@ -34,7 +35,7 @@
 
 	desc("Erase all generated files");
 	task("clean", function() {
-		console.log("Erasing generated files: .");
+		shell.rm('-rf', 'generated');
 	});
 
 	/********************************************
