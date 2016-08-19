@@ -1,0 +1,18 @@
+ul.tabs{
+	list-style-type: none;
+	padding: 0;
+}
+
+ul.tabs li {
+	display: inline-block;
+	border: 1px lightgray solid;
+	padding: 5px 20px;
+	background-color: skyblue;
+}
+
+ul.tabs li.active {
+	display: inline-block;
+	border: 1px lightgray solid;
+	padding: 5px 20px;
+	background-color: white;
+}
