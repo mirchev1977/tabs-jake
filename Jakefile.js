@@ -80,7 +80,7 @@
 	desc("Build distribution directory");
 	task("build", [ DIST_DIR ], function() {
 		shell.rm('-rf', DIST_DIR + '/*');
-		shell.cp('src/index.html', DIST_DIR);
+		shell.cp('src/content/*', DIST_DIR);
 
 		jake.exec("node node_modules/browserify/bin/cmd.js src/app.js -o " + DIST_DIR + "/bundle.js", {interactive: true}, complete);
 
