@@ -7,7 +7,7 @@
 	describe("tabs", function(){
 
 		it("checks if tabsInitialize function exists", function(){
-
+			tabs.tabsInitialize();
 		});
 
 		it("creates three tabs and three containers with text inside", function(){
@@ -43,7 +43,8 @@
 			container.appendChild(nav);
 			container.appendChild(content);
 
-			var cont = document.querySelector('body .container');
+			var cont = document.querySelector('.container');
+
 			console.log(cont);
 		});
 	});
