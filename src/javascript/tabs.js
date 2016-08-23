@@ -16,7 +16,27 @@
 		
 		container.appendChild(nav);
 		container.appendChild(content);
+
+		attachEventListeners();
 	};
+
+	function attachEventListeners(){
+		var tabs = document.querySelectorAll('.tabs li');
+
+		for (var i = 0; i < tabs.length; i++) {
+			var tab = tabs[i];
+			addListener(tab);
+		}
+
+		function addListener(tab){
+			tab.addEventListener('click', function(){
+				var tabId = this.getAttribute('id');
+				var tabIdNumber = tabId[tabId.length - 1];
+				switchTabs(tabId);
+				switchContentElements('content' + tabIdNumber);
+			});
+		}
+	}
 
 	function generateTabsHtml(tabsNumber, defaultTab){
 		var html = '<nav><ul class="tabs">';
@@ -45,5 +65,20 @@
 		});
 
 		return html;
+	}
+
+	function switchTabs(newTab){
+		var tab = document.querySelector('.tabs #' + newTab);
+		var oldTab = document.querySelector('.tabs .active');
+		oldTab.classList.remove('active');
+		tab.classList.add('active');
+	}
+
+	function switchContentElements(contentElement){
+		var currentContent = document.querySelector('.content .active');
+		currentContent.classList.remove('active');
+
+		var nextContent = document.getElementById(contentElement);
+		nextContent.classList.add('active');
 	}
 }());
