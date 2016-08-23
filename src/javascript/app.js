@@ -3,5 +3,5 @@
 	
 	var tabs = require("./tabs.js");
 
-	tabs.tabsInitialize();
+	// tabs.tabsInitialize();
 }());
