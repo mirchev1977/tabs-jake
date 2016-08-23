@@ -1,7 +1,7 @@
 (function(){
 	"use strict";
 	
-	exports.tabsInitialize = function tabsInitialize(){
+	exports.tabsInitialize = function tabsInitialize(tabsNumber){
 		var container = document.createElement('div');
 		container.setAttribute('class', 'container');
 		document.body.appendChild(container);
@@ -9,9 +9,7 @@
 		var nav = document.createElement('nav');
 		nav.innerHTML = '<nav>' +
 			'<ul class="tabs">' +
-				'<li id="tab1">Tab 1</li>' +
-				'<li id="tab2" class="active">Tab 2</li>' +
-				'<li id="tab3">Tab 3</li>' +
+				generateTabsHtml(tabsNumber);
 			'</ul>' +
 		'</nav>';
 
@@ -35,4 +33,13 @@
 		container.appendChild(nav);
 		container.appendChild(content);
 	};
+
+	function generateTabsHtml(tabsNumber){
+		var html = '';
+		for (var i = 1; i < tabsNumber + 1; i++) {
+			html += '<li id = "tab' + i + '">Tab ' + i + '</li>';
+		}
+
+		return html;
+	}
 }());

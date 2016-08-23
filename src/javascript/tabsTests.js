@@ -9,7 +9,7 @@
 		styleTabs();
 
 		it("creates three tabs and three containers with text inside", function(){
-			tabs.tabsInitialize();
+			tabs.tabsInitialize(3);
 		});
 	});
 
