@@ -6,6 +6,8 @@
 
 	describe("tabs", function(){
 
+		var ACTIVE_ELEMENT = 1;
+
 		styleTabs();
 
 		it("creates tabs and content elements whose number equals the number of texts we want to display", function(){
@@ -15,7 +17,7 @@
 				'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' + ' Nam sit amet vestibulum quam, quis fermentum justo. Proin ultricies ex id lectus iaculis, blandit porttitor nulla vestibulum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt leo non gravida scelerisque. Aliquam neque ipsum, ultricies ac mollis quis, vehicula vitae lorem. Mauris ornare urna a aliquam congue. Donec sed tortor egestas sapien volutpat pulvinar at nec erat. Morbi ut tellus in velit tincidunt tincidunt. Mauris vel sapien mauris.',
 				'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' + ' Nam sit amet vestibulum quam, quis fermentum justo. Proin ultricies ex id lectus iaculis, blandit porttitor nulla vestibulum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt leo non gravida scelerisque. Aliquam neque ipsum, ultricies ac mollis quis, vehicula vitae lorem. Mauris ornare urna a aliquam congue. Donec sed tortor egestas sapien volutpat pulvinar at nec erat. Morbi ut tellus in velit tincidunt tincidunt. Mauris vel sapien mauris.'
 			];
-			tabs.tabsInitialize(texts, 2);
+			tabs.tabsInitialize(texts, ACTIVE_ELEMENT);
 		});
 
 		it('checks if we have the necessary ids on the tabs and content elements', function() {
@@ -30,11 +32,11 @@
 		});
 
 		it("checks if we have activated the correct tab", function(){
-			assert.equal(document.getElementById('tab2').classList.contains('active'), true);
+			assert.equal(document.getElementById('tab' + ACTIVE_ELEMENT).classList.contains('active'), true);
 		});
 
 		it("checks if we have displayed the correct content element", function(){
-			assert.equal(document.getElementById('content2').classList.contains('active'), true);
+			assert.equal(document.getElementById('content' + ACTIVE_ELEMENT).classList.contains('active'), true);
 		});
 	});
 
