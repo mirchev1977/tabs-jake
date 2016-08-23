@@ -15,7 +15,7 @@
 				'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' + ' Nam sit amet vestibulum quam, quis fermentum justo. Proin ultricies ex id lectus iaculis, blandit porttitor nulla vestibulum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt leo non gravida scelerisque. Aliquam neque ipsum, ultricies ac mollis quis, vehicula vitae lorem. Mauris ornare urna a aliquam congue. Donec sed tortor egestas sapien volutpat pulvinar at nec erat. Morbi ut tellus in velit tincidunt tincidunt. Mauris vel sapien mauris.',
 				'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' + ' Nam sit amet vestibulum quam, quis fermentum justo. Proin ultricies ex id lectus iaculis, blandit porttitor nulla vestibulum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt leo non gravida scelerisque. Aliquam neque ipsum, ultricies ac mollis quis, vehicula vitae lorem. Mauris ornare urna a aliquam congue. Donec sed tortor egestas sapien volutpat pulvinar at nec erat. Morbi ut tellus in velit tincidunt tincidunt. Mauris vel sapien mauris.'
 			];
-			tabs.tabsInitialize(texts, 1);
+			tabs.tabsInitialize(texts, 2);
 		});
 
 		it('checks if we have the necessary ids on the tabs and content elements', function() {
@@ -30,7 +30,11 @@
 		});
 
 		it("checks if we have activated the correct tab", function(){
-			assert.equal(document.getElementById('tab1').classList.contains('active'), true);
+			assert.equal(document.getElementById('tab2').classList.contains('active'), true);
+		});
+
+		it("checks if we have displayed the correct content element", function(){
+			assert.equal(document.getElementById('content2').classList.contains('active'), true);
 		});
 	});
 
@@ -71,10 +75,15 @@
 			'padding: 0;' +
 		'}' +
 
+		'article.content > div.active {' +
+			'display: block;' +
+		'}' +
+
 		'article.content > div{' +
 			'padding: 10px;' +
 			'border: 1px lightgray solid;' +
 			'margin-bottom: 20px;' +
+			'display: none;' +
 		'}' +
 
 		'article.content > div:last-of-type{' +

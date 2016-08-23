@@ -36,7 +36,11 @@
 	function generateContentSections(texts, activeTab){
 		var html = '';
 		texts.forEach( function(text, index) {
-			html += '<div id="content' + (parseInt(index) + 1) + '"><h2>Content ' + (parseInt(index) + 1) + '</h2>';
+			if(activeTab === (parseInt(index) + 1)){
+				html += '<div id="content' + (parseInt(index) + 1) + '" class="active"><h2>Content ' + (parseInt(index) + 1) + '</h2>';
+			} else {
+				html += '<div id="content' + (parseInt(index) + 1) + '"><h2>Content ' + (parseInt(index) + 1) + '</h2>';
+			}
 			html += '<p>' + text + '</p></div>';
 		});
 
