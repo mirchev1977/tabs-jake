@@ -15,7 +15,22 @@
 				'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' + ' Nam sit amet vestibulum quam, quis fermentum justo. Proin ultricies ex id lectus iaculis, blandit porttitor nulla vestibulum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt leo non gravida scelerisque. Aliquam neque ipsum, ultricies ac mollis quis, vehicula vitae lorem. Mauris ornare urna a aliquam congue. Donec sed tortor egestas sapien volutpat pulvinar at nec erat. Morbi ut tellus in velit tincidunt tincidunt. Mauris vel sapien mauris.',
 				'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' + ' Nam sit amet vestibulum quam, quis fermentum justo. Proin ultricies ex id lectus iaculis, blandit porttitor nulla vestibulum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt leo non gravida scelerisque. Aliquam neque ipsum, ultricies ac mollis quis, vehicula vitae lorem. Mauris ornare urna a aliquam congue. Donec sed tortor egestas sapien volutpat pulvinar at nec erat. Morbi ut tellus in velit tincidunt tincidunt. Mauris vel sapien mauris.'
 			];
-			tabs.tabsInitialize(texts);
+			tabs.tabsInitialize(texts, 1);
+		});
+
+		it('checks if we have the necessary ids on the tabs and content elements', function() {
+			assert.equal(document.getElementById('tab1').getAttribute('id'), 'tab1');
+			assert.equal(document.getElementById('tab2').getAttribute('id'), 'tab2');
+			assert.equal(document.getElementById('tab3').getAttribute('id'), 'tab3');
+			assert.equal(document.getElementById('tab4').getAttribute('id'), 'tab4');
+			assert.equal(document.getElementById('content1').getAttribute('id'), 'content1');
+			assert.equal(document.getElementById('content2').getAttribute('id'), 'content2');
+			assert.equal(document.getElementById('content3').getAttribute('id'), 'content3');
+			assert.equal(document.getElementById('content4').getAttribute('id'), 'content4');
+		});
+
+		it("checks if we have activated the correct tab", function(){
+			assert.equal(document.getElementById('tab1').classList.contains('active'), true);
 		});
 	});
 
