@@ -38,6 +38,60 @@
 		it("checks if we have displayed the correct content element", function(){
 			assert.equal(document.getElementById('content' + ACTIVE_ELEMENT).classList.contains('active'), true);
 		});
+
+		it("switches to tab 2 and checks if we have active class on tab2 and content2", function(){
+			var current = document.getElementById('tab2');
+			var click_ev = document.createEvent("MouseEvents");
+			click_ev.initEvent("click", true /* bubble */, true /* cancelable */);
+			current.dispatchEvent(click_ev);
+			assert.equal(document.getElementById('tab2').classList.contains('active'), true);
+			assert.equal(document.getElementById('content2').classList.contains('active'), true);
+		});
+
+		it("switches to tab3 and checks if we have active class on tab3 and content3", function(){
+			var current = document.getElementById('tab3');
+			var click_ev = document.createEvent("MouseEvents");
+			click_ev.initEvent("click", true /* bubble */, true /* cancelable */);
+			current.dispatchEvent(click_ev);
+			assert.equal(document.getElementById('tab3').classList.contains('active'), true);
+			assert.equal(document.getElementById('content3').classList.contains('active'), true);
+		});
+
+		it("switches to tab4 and checks if we have active class on tab4 and content4", function(){
+			var current = document.getElementById('tab4');
+			var click_ev = document.createEvent("MouseEvents");
+			click_ev.initEvent("click", true /* bubble */, true /* cancelable */);
+			current.dispatchEvent(click_ev);
+			assert.equal(document.getElementById('tab4').classList.contains('active'), true);
+			assert.equal(document.getElementById('content4').classList.contains('active'), true);
+		});
+
+		it("switches to tab3 and checks if we have active class on tab3 and content3", function(){
+			var current = document.getElementById('tab3');
+			var click_ev = document.createEvent("MouseEvents");
+			click_ev.initEvent("click", true /* bubble */, true /* cancelable */);
+			current.dispatchEvent(click_ev);
+			assert.equal(document.getElementById('tab3').classList.contains('active'), true);
+			assert.equal(document.getElementById('content3').classList.contains('active'), true);
+		});
+
+		it("switches to tab 2 and checks if we have active class on tab2 and content2", function(){
+			var current = document.getElementById('tab2');
+			var click_ev = document.createEvent("MouseEvents");
+			click_ev.initEvent("click", true /* bubble */, true /* cancelable */);
+			current.dispatchEvent(click_ev);
+			assert.equal(document.getElementById('tab2').classList.contains('active'), true);
+			assert.equal(document.getElementById('content2').classList.contains('active'), true);
+		});
+
+		it("switches to tab1 and checks if we have active class on tab1 and content1", function(){
+			var current = document.getElementById('tab1');
+			var click_ev = document.createEvent("MouseEvents");
+			click_ev.initEvent("click", true /* bubble */, true /* cancelable */);
+			current.dispatchEvent(click_ev);
+			assert.equal(document.getElementById('tab1').classList.contains('active'), true);
+			assert.equal(document.getElementById('content1').classList.contains('active'), true);
+		});
 	});
 
 	function styleTabs(){
